@@ -1,5 +1,5 @@
 var url = window.location.href;
-var swLocation = '/chat2021/sw.js';
+var swLocation = '/Chat_dbz/sw.js';
 
 
 

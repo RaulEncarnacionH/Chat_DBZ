@@ -15,8 +15,7 @@ const APP_SHELL = [
     'img/avatars/vegeta.jpg',
     'img/avatars/vegetto.jpg',
     'img/fondo1.jpg',
-    'js/app.js',
-    'js/sw-aux.js'
+    'js/app.js'
 ];
 
 const APP_SHELL_INMUTABLE = [ //busqueda en internet

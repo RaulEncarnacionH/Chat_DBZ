@@ -1,25 +1,13 @@
 var url = window.location.href;
 var swLocation = '/Chat_dbz/sw.js';
 
-    if(navigator.serviceWorker){
-   
-    //En caso de que ejecutemos el proyecto en un ambiente de prueba
+if(navigator.serviceWorker)
+{
     if(url.includes('localhost'))
-        navigator.serviceWorker.register('/sw.js');
+        swLocation='/sw.js';
     
-    //En caso de ejecutar el proyecto en github
-    else
-        navigator.serviceWorker.register(SWLocation);    
-
+        navigator.serviceWorker.register(swLocation);
 }
-
-// if(navigator.serviceWorker)
-// {
-//     if(url.includes('localhost'))
-//         swLocation='/sw.js';
-    
-//         navigator.serviceWorker.register(swLocation);
-// }
 
 // if(navigator.serviceWorker)
 // {

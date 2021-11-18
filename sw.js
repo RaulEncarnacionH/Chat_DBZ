@@ -4,7 +4,6 @@ const STATIC_CACHE = 'static-v1';
 const DYNAMIC_CACHE = 'dynamic-v1';
 const INMUTABLE_CACHE = 'inmutable-v1';
 
-//Cuarta variable: Corazon de la app y se guardara el cache estaico
 const APP_SHELL = [
     //'/',
     'index.html',
@@ -26,7 +25,7 @@ const APP_SHELL_INMUTABLE = [
     'js/libs/jquery.js'
 ];
 
-//Instalar nuestro SW 
+//Instalar SW 
 self.addEventListener('install', event =>{
 
     const cacheStatic = caches.open(STATIC_CACHE).then(cache=>
@@ -40,7 +39,7 @@ self.addEventListener('install', event =>{
 
 });
 
-//Activar nuestro SW
+//Activar SW
 self.addEventListener('activate', event =>{
     const respuesta = caches.keys().then(keys =>{
         keys.forEach(key =>{

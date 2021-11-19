@@ -41,11 +41,22 @@ self.addEventListener('install', event =>{
 
 //Activar SW
 self.addEventListener('activate', event =>{
+    
     const respuesta = caches.keys().then(keys =>{
+        
         keys.forEach(key =>{
+
+            //borrar cache dejando la ultima version
+
             if(key !== STATIC_CACHE && key.includes('static')){
                 return caches.delete(key);
             }
+
+            if(key !== DYNAMIC_CACHE && key.includes('dynamic')){
+                return caches.delete(key);
+            }
+
+            
         });
     });
     event.waitUntil(respuesta);
@@ -53,15 +64,20 @@ self.addEventListener('activate', event =>{
 
 //fetch
 self.addEventListener('fetch', event =>{
+    
     const respuesta = caches.match(event.request).then(res=>{        
-       if (res) {
+       
+        if (res) {
+            
            return res;
-        } 
-        else {
+       
+        } else {
+       
             console.log("el archivo solicitado no esta en cache", event.request.url);
             return fetch(event.request).then(newRes=>{
                 //Llamamos funcion del archivo sw-aux.js de Guardar en cache Dinamico
                 return actualizarCacheDinamico(DYNAMIC_CACHE, event.request, newRes);                
+       
             });
         } //fin del else
 

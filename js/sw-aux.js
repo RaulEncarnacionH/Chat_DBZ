@@ -9,10 +9,7 @@ function actualizarCacheDinamico(dynamicCache, req, res){
         });
     }
     else{
-        return res;
-        // return fetch(e.request).then(newRes=>{
-        //     actualizarCacheDinamico(DYNAMIC_CACHE,e.request,newRes);
-        // });
+        return res;    
     }
 
 }

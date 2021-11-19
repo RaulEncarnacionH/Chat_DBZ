@@ -57,8 +57,6 @@ self.addEventListener('fetch', event =>{
        if (res) {
            return res;
         } 
-        //sino, muestra mensaje, muestra el archivo desde internet
-        //o vuelves a tomar el archivo desde la variable CACHE_NAME    
         else {
             console.log("el archivo solicitado no esta en cache", event.request.url);
             return fetch(event.request).then(newRes=>{

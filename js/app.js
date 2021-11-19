@@ -1,24 +1,24 @@
 var url = window.location.href;
 var swLocation = '/Chat_dbz/sw.js';
 
-if(navigator.serviceWorker)
-{
-    if(url.includes('localhost'))
-        swLocation='/sw.js';
-    
-        navigator.serviceWorker.register(swLocation);
-}
-
 // if(navigator.serviceWorker)
 // {
-//     if(url.includes('localhost')){
-//         navigator.serviceWorker.register('/sw.js');        
-//     }
-//     else{
-//         navigator.serviceWorker.register(swLocation);     
-//     }
-//     // navigator.serviceWorker.register('/sw.js');        
+//     if(url.includes('localhost'))
+//         swLocation='/sw.js';
+    
+//         navigator.serviceWorker.register(swLocation);
 // }
+
+if(navigator.serviceWorker)
+{
+    if(url.includes('localhost')){
+        navigator.serviceWorker.register('/sw.js');        
+    }
+    else{
+        navigator.serviceWorker.register(swLocation);     
+    }
+    // navigator.serviceWorker.register('/sw.js');        
+}
 
 var titulo      = $('#titulo');
 var nuevoBtn    = $('#nuevo-btn');
